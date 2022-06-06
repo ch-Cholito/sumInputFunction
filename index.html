@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    Calculate sum
+  </body>
+  <script>
+    function run() {
+      const numList = [];
+      while (true) {
+        let num = prompt("Set a number");
+        if (!num || isNaN(+num)) {
+          break;
+        }
+        numList.push(+num);
+      }
+      if (!numList.length) {
+        alert("Неверный формат ввода");
+        return;
+      }
+      numList.sort();
+      /*       let count = 0;
+      numList.forEach((item) => {
+        count += item;
+      }); */
+      const count = numList.reduce((acc, item) => {
+        return acc + item;
+      }, 0);
+      alert(count);
+    }
+    run();
+  </script>
+</html>
